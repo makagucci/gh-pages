@@ -1,0 +1,25 @@
+no threading/no gil-issue
+c@caine:~/code/python/info_sec/tool_box$ time python ../zip_c_backup.py chest.zip dictionary.txt 
+[+] Password = secret
+
+real	0m10.982s
+user	0m9.824s
+sys	0m1.096s
+
+
+threading/gil-issue
+c@caine:~/code/python/info_sec/tool_box$ time ./zip_crack.py chest.zip dictionary.txt 
+[+] Password = secret
+
+real	0m50.909s
+user	0m37.280s
+sys	0m19.964s
+
+
+prototype no threading
+c@caine:~/code/python/info_sec/tool_box$ time ./crack_zip.py chest.zip dictionary.txt 
+The password is: secret
+
+real	0m11.720s
+user	0m10.420s
+sys	0m1.268s
